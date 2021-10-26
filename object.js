@@ -1,7 +1,10 @@
 const through = require("through2");
 
+const writeStream = through.obj(totalSize);
+writeStream.on('finish', finish);
+
 // object
-process.stdin.pipe(through.obj(write)).pipe(through.obj(totalSize, end));
+process.stdin.pipe(through.obj(write)).pipe(writeStream);
 
 function write(chunk, encoding, next) {
     next(null, {length: chunk.length});
@@ -13,6 +16,6 @@ function totalSize(obj, encoding, next) {
     next();
 }
 
-function end() {
+function finish() {
     console.log("total size is: ", size);
 }

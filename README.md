@@ -59,7 +59,7 @@ Expected output:
 {"title":"Building Well-Structured JavaScript Applications"}
 {"title":"Secrets of the JavaScript Ninja pBook upgrade"}
 {"title":"JavaScript Application Design"}
-```
+```z
 
 Hints:
 * use those modules: http, fs, zlib, split2, through2 (in object mode)
